@@ -30,9 +30,9 @@ def main():
       fname = parser_response.content['url'];
       fname = fname.replace('/','_')
       fname = fname.replace(':','')
-      fhtml = open(sources + fname + '.html', 'wb')
+      fhtml = open(articles + fname + '.html', 'wb')
       fhtml.write(parser_response.content['content'])
-      fjson = open(articles + fname + '.json', 'wb')
+      fjson = open(sources + fname + '.json', 'wb')
       fjson.write(json.dumps(parser_response.content))
     finally:
         fhtml.close()
